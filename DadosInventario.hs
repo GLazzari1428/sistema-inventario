@@ -1,4 +1,4 @@
-module Main where
+module LogicaInventario where
 
 import Data.Map (Map)
 import Data.Time (UTCTime)
@@ -36,4 +36,5 @@ data LogEntry = LogEntry
     , acao      :: AcaoLog
     , detalhes  :: String
     , status    :: StatusLog
+
     } deriving (Show, Read, Eq)
