@@ -1,4 +1,4 @@
-module LogicaInventario where
+module DadosInventario where
 
 import Data.Map (Map)
 import Data.Time (UTCTime)
@@ -38,3 +38,4 @@ data LogEntry = LogEntry
     , status    :: StatusLog
 
     } deriving (Show, Read, Eq)
+
