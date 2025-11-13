@@ -29,11 +29,11 @@ Este projeto consiste no desenvolvimento de um Sistema de Gerenciamento de Inven
 O sistema foi implementado com as seguintes funcionalidades:
 
 - **Gerenciamento de Itens:** Adicionar, remover e atualizar a quantidade de itens no inventário.
-- **Persistência de Estado:** O inventário é salvo automaticamente no arquivo `Inventario.dat` após cada operação bem-sucedida.
-- **Log de Auditoria:** Todas as operações (sucesso ou falha) são registradas no arquivo `Auditoria.log` com timestamp, tipo de ação, detalhes e status.
-- **Tratamento de Erros:** O sistema valida operações e retorna mensagens de erro claras (ex: estoque insuficiente, item não encontrado, ID duplicado).
+- **Persistência de Estado:** O inventário é salvo automaticamente no arquivo *Inventario.dat* após cada operação bem-sucedida.
+- **Log de Auditoria:** Todas as operações (sucesso ou falha) são registradas no arquivo *Auditoria.log* com timestamp, tipo de ação, detalhes e status.
+- **Tratamento de Erros:** O sistema valida operações e retorna mensagens de erro claras (estoque insuficiente, item não encontrado, ID duplicado, etc).
 - **Relatórios e Análise:** Funções para análise de logs incluindo relatório geral, logs de erro, histórico por item e identificação do item mais movimentado.
-- **Separação Lógica Pura/Impura:** As funções de lógica de negócio são puras e utilizam `Either` para sinalizar falhas, enquanto operações de IO são isoladas no módulo principal.
+
 
 ---
 
