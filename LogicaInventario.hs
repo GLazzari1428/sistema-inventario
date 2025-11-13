@@ -13,7 +13,7 @@ addItem timestamp novoItem inventario =
     
     in if Map.member idDoItem inventario
         then
-            Left "Erro: ID do item já existe."
+            Left "Erro: ID do item ja existe."
         else
             let novoInventario = Map.insert idDoItem novoItem inventario
             
@@ -31,7 +31,7 @@ removeItem timestamp itemID qtdRemover inventario =
     let resultadoBusca = Map.lookup itemID inventario 
     in case resultadoBusca of
         Nothing  ->
-            Left "Erro: Item não encontrado."
+            Left "Erro: Item nao encontrado."
         Just itemEncontrado ->
             if(quantidade itemEncontrado) < qtdRemover
             then
@@ -53,7 +53,7 @@ updateQty timestamp itemID qtdAdicionar inventario =
     let resultadoBusca = Map.lookup itemID inventario
     in case resultadoBusca of
         Nothing   -> 
-            Left "Erro: Item não encontrado."
+            Left "Erro: Item nao encontrado."
         Just itemEncontrado ->
             let novaQtd = (quantidade itemEncontrado) + qtdAdicionar
                 itemAtualizado = itemEncontrado { quantidade = novaQtd }
