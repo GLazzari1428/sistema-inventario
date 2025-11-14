@@ -43,6 +43,17 @@ O projeto está organizado da seguinte forma para facilitar a navegação e o en
 
 ```bash
 .
+
+├──cenarios/              # Pastas e Arquivos de teste
+   ├──cenario_1
+      ├── Auditoria.log   # Arquivo de exemplo log para o cenario 1
+      ├── Inventario.dat  # Arquivo de exemplo dat para o cenario 1
+   ├──cenario_2
+      ├── Auditoria.log   # Arquivo de exemplo log para o cenario 2
+      ├── Inventario.dat  # Arquivo de exemplo dat para o cenario 2
+   ├──cenario_3
+      ├── Auditoria.log   # Arquivo de exemplo log para o cenario 3
+      ├── Inventario.dat  # Arquivo de exemplo dat para o cenario 3
 ├── DadosInventario.hs    # Definição de tipos de dados
 ├── LogicaInventario.hs   # Funções puras de lógica de negócio (addItem, removeItem, updateQty)
 ├── Relatorios.hs         # Funções de análise de logs e geração de relatórios
@@ -183,7 +194,7 @@ Saindo.
 
 ## 8. Cenários de Teste
 
-Os seguintes cenários de teste foram executados para validar o sistema:
+Na pasta */cenarios/* foram colocados arquivos de exemplo para todos os 3 cenários. Além disso eles foram executados e os resultados estão abaixo para validar o funcionamento do sistema:
 
 ### 8.1. Cenário 1: Persistência de Estado (Sucesso)
 

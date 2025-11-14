@@ -1,0 +1,3 @@
+LogEntry {timestamp = 2025-11-14 22:05:05.931244448 UTC, acao = Initialize, detalhes = "Sistema inicializado", status = Sucesso}
+LogEntry {timestamp = 2025-11-14 22:05:18.56458287 UTC, acao = Add, detalhes = "[T003] Item 'Teclado_Mecanico' adicionado.", status = Sucesso}
+LogEntry {timestamp = 2025-11-14 22:05:23.212573227 UTC, acao = Remove, detalhes = "Remocao [T003] qtd=15", status = Falha "Erro: Estoque insuficiente."}

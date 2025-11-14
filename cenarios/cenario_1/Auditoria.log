@@ -1,0 +1,4 @@
+LogEntry {timestamp = 2025-11-14 21:59:28.433490793 UTC, acao = Initialize, detalhes = "Sistema inicializado", status = Sucesso}
+LogEntry {timestamp = 2025-11-14 22:00:14.33986278 UTC, acao = Add, detalhes = "[T001] Item 'Teclado' adicionado.", status = Sucesso}
+LogEntry {timestamp = 2025-11-14 22:00:27.124848789 UTC, acao = Add, detalhes = "[M001] Item 'Mouse' adicionado.", status = Sucesso}
+LogEntry {timestamp = 2025-11-14 22:00:32.11847337 UTC, acao = Add, detalhes = "[M002] Item 'Monitor' adicionado.", status = Sucesso}

@@ -1,0 +1,1 @@
+fromList [("T003",Item {itemID = "T003", nome = "Teclado_Mecanico", quantidade = 10, categoria = "Perifericos"})]
