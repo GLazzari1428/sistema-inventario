@@ -6,7 +6,7 @@ import Data.Time (UTCTime)
 
 type ResultadoOperacao = (Inventario, LogEntry)
 
-
+-- Adicionar novo item ao inventario
 addItem :: UTCTime -> Item -> Inventario -> Either String ResultadoOperacao
 addItem timestamp novoItem inventario = 
     let idDoItem = itemID novoItem
@@ -25,7 +25,7 @@ addItem timestamp novoItem inventario =
                     }
             in Right (novoInventario, logEntry)
             
-            
+-- Remover quantidade de item no inventário
 removeItem :: UTCTime -> String -> Int -> Inventario -> Either String ResultadoOperacao
 removeItem timestamp itemID qtdRemover inventario =
     let resultadoBusca = Map.lookup itemID inventario 
@@ -47,7 +47,8 @@ removeItem timestamp itemID qtdRemover inventario =
                         , status    = Sucesso
                         }
                 in Right (novoInventario, logEntry)
-                
+
+-- Adicionar nova quantidade de itens ao inventario  
 updateQty :: UTCTime -> String -> Int -> Inventario -> Either String ResultadoOperacao
 updateQty timestamp itemID qtdAdicionar inventario =
     let resultadoBusca = Map.lookup itemID inventario
