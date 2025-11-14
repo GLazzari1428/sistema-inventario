@@ -60,10 +60,25 @@ Para executar o sistema, deve-se utilizar o GDB Online, basta acessar o link aba
 
 [LINK PARA O REPOSITÓRIO GDB ONLINE DO PROJETO](https://onlinegdb.com/eFlXb_uz4S)
 
-
 ---
+## 5. População Inicial (para testes de relatório e lógica)
 
-## 5. Comandos Disponíveis
+Para realizar a população inicial e como pedido na rubrica, nós decidimos utilizar comandos *add* para adicionar os 10 itens distintos. Basta executar os comandos os comandos a seguir, sequencialmente, para realizar a população inicial:
+
+```haskell
+add T001 Teclado 10 Perifericos
+add M001 Mouse 15 Perifericos
+add M002 Monitor 5 Monitores
+add HD001 HD_Externo 20 Armazenamento
+add IMP001 Impressora 8 Perifericos
+add CPU001 Processador 12 Componentes
+add RAM001 Memoria_DDR4 25 Componentes
+add SSD001 SSD_500GB 18 Armazenamento
+add WEB001 Webcam 7 Perifericos
+add HF001 Headset 14 Audio
+```
+
+## 6. Comandos Disponíveis
 
 O sistema aceita os seguintes comandos no terminal:
 
@@ -80,11 +95,11 @@ O sistema aceita os seguintes comandos no terminal:
 
 ---
 
-## 6. Exemplo de Uso
+## 7. Exemplo de Uso
 
 Abaixo um exemplo prático de interação com o sistema, demonstrando todos os comandos e funcionalidades:
 
-```
+```haskell
 Carregando sistema de inventário...
 Aviso: Inventario.dat não encontrado. Iniciando com inventário vazio.
 Aviso: Auditoria.log não encontrado. Iniciando com log vazio.
@@ -166,11 +181,11 @@ Saindo.
 
 ---
 
-## 7. Cenários de Teste
+## 8. Cenários de Teste
 
 Os seguintes cenários de teste foram executados para validar o sistema:
 
-### 7.1. Cenário 1: Persistência de Estado (Sucesso)
+### 8.1. Cenário 1: Persistência de Estado (Sucesso)
 
 **Passos Executados:**
 1. Iniciar o programa (sem arquivos de dados existentes)
@@ -209,7 +224,7 @@ Item {itemID = "M002", nome = "Monitor", quantidade = 5, categoria = "Monitores"
 Item {itemID = "T001", nome = "Teclado", quantidade = 10, categoria = "Perifericos"}
 ```
 
-### 7.2. Cenário 2: Erro de Lógica (Estoque Insuficiente)
+### 8.2. Cenário 2: Erro de Lógica (Estoque Insuficiente)
 
 **Passos Executados:**
 1. Adicionar um item com 10 unidades:
@@ -248,7 +263,7 @@ fromList [("T003",Item {itemID = "T003", nome = "Teclado_Mecanico", quantidade =
 
 ---
 
-### 7.3. Cenário 3: Geração de Relatório de Erros
+### 8.3. Cenário 3: Geração de Relatório de Erros
 
 **Passos Executados:**
 1. Executar o Cenário 2 (falha de estoque insuficiente registrada no log)
