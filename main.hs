@@ -95,7 +95,6 @@ tratarResultado time acao itemId falhaMsg inv logs (Left erro) = do
 
 -- SUCESSO: exibe msg, enriquece log with [itemID], salva inventário
 tratarResultado _ _ itemId _ _ logs (Right (novoInv, logSucesso)) = do
-  -- CRITICAL FIX: Add [itemID] to the beginning of detalhes
   let detalhesEnriquecido = "[" ++ itemId ++ "] " ++ detalhes logSucesso
       logEnriquecido = logSucesso { detalhes = detalhesEnriquecido }
 
@@ -139,7 +138,7 @@ processarComando comando inv logs = do
   time <- getCurrentTime
   case words comando of
 
-    -- ADD - Pass itemID for both success and failure
+    -- ADD
     ["add", id', nome', qtdStr, cat'] -> do
       case readMaybe qtdStr of
         Nothing -> do
@@ -150,7 +149,7 @@ processarComando comando inv logs = do
           let item = Item { itemID = id', nome = nome', quantidade = qtd, categoria = cat' }
           tratarResultado time Add id' ("Adicao [" ++ id' ++ "] " ++ nome') inv logs (addItem time item inv)
 
-    -- REMOVE - Pass itemID
+    -- REMOVE
     ["remove", id', qtdStr] -> do
       case readMaybe qtdStr of
         Nothing -> do
@@ -160,7 +159,7 @@ processarComando comando inv logs = do
         Just qtd ->
           tratarResultado time Remove id' ("Remocao [" ++ id' ++ "] qtd=" ++ show qtd) inv logs (removeItem time id' qtd inv)
 
-    -- UPDATE - Pass itemID
+    -- UPDATE
     ["update", id', qtdStr] -> do
       case readMaybe qtdStr of
         Nothing -> do
